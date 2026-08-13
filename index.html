@@ -109,6 +109,8 @@
     .app-icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 16px; }
     .app-card h3 { font-size: 1.08rem; font-weight: 700; }
     .app-card p { color: var(--muted); font-size: 0.92rem; margin-top: 6px; }
+    .app-card .play { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--brand); font-weight: 600; font-size: 0.9rem; }
+    .app-card .play svg { width: 15px; height: 15px; }
 
     .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 46px; }
     .feat { padding: 26px; border-radius: 18px; background: var(--card); border: 1px solid var(--border); }
@@ -127,6 +129,26 @@
     .foot-links a:hover { color: var(--text); }
     .copy { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 26px; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Aplicativos da Phantom Tecnologia na Google Play",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"item":{"@type":"MobileApplication","name":"Frases e Status Prontos","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesstatus.frases_status"}},
+      {"@type":"ListItem","position":2,"item":{"@type":"MobileApplication","name":"Frases Bíblicas e Versículos","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesbiblicas.frases_biblicas"}},
+      {"@type":"ListItem","position":3,"item":{"@type":"MobileApplication","name":"Mensagens de Bom Dia","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.mensagens.mensagens"}},
+      {"@type":"ListItem","position":4,"item":{"@type":"MobileApplication","name":"Frases de Motivação","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesmotivacao.frasesmotivacao"}},
+      {"@type":"ListItem","position":5,"item":{"@type":"MobileApplication","name":"Frases Indiretas","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.indiretas.indiretas"}},
+      {"@type":"ListItem","position":6,"item":{"@type":"MobileApplication","name":"Mensagens de Feliz Aniversário","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.aniversario.aniversario"}},
+      {"@type":"ListItem","position":7,"item":{"@type":"MobileApplication","name":"Frases de Amor e Romance","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesdeamor.amor"}},
+      {"@type":"ListItem","position":8,"item":{"@type":"MobileApplication","name":"Frases de Rap e Trap","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesderap.rap"}},
+      {"@type":"ListItem","position":9,"item":{"@type":"MobileApplication","name":"Frases Engraçadas e Piadas","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesengracadas.humor"}},
+      {"@type":"ListItem","position":10,"item":{"@type":"MobileApplication","name":"Frases Tristes e Desabafos","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasestristes.tristes"}},
+      {"@type":"ListItem","position":11,"item":{"@type":"MobileApplication","name":"Orações Poderosas e Salmos","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.oracoesesalmos.oracoes"}}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
@@ -138,6 +160,7 @@
         Phantom Tecnologia
       </div>
       <nav class="nav-links">
+        <a href="#apps">Aplicativos</a>
         <a href="#sobre">Sobre</a>
         <a href="./politicas/">Privacidade</a>
         <a href="#contato">Contato</a>
@@ -163,6 +186,95 @@
           <div class="stat"><b>+20</b><span>aplicativos publicados</span></div>
           <div class="stat"><b>Google Play</b><span>distribuição oficial</span></div>
           <div class="stat"><b>100% PT-BR</b><span>feito para o Brasil</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APLICATIVOS -->
+    <section class="block" id="apps">
+      <div class="wrap">
+        <p class="eyebrow">Nossos aplicativos</p>
+        <h2>Frases e mensagens para cada momento</h2>
+        <p class="sub">Todos gratuitos, offline e em português. Toque em um app para baixar direto na Google Play.</p>
+        <div class="grid">
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.frasesstatus.frases_status" target="_blank" rel="noopener" title="Baixar Frases e Status Prontos na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#6d8bff,#a06bff)">💬</div>
+            <h3>Frases e Status Prontos</h3>
+            <p>Frases e status prontos para WhatsApp, Instagram e Facebook.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.frasesbiblicas.frases_biblicas" target="_blank" rel="noopener" title="Baixar Frases Bíblicas e Versículos na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#f6d365,#c9a227)">📖</div>
+            <h3>Frases Bíblicas e Versículos</h3>
+            <p>Versículos e frases bíblicas para refletir, orar e compartilhar.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.mensagens.mensagens" target="_blank" rel="noopener" title="Baixar Mensagens de Bom Dia na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#f6d365,#fda085)">☀️</div>
+            <h3>Mensagens de Bom Dia</h3>
+            <p>Mensagens de bom dia, boa tarde e boa noite para enviar todo dia.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.frasesmotivacao.frasesmotivacao" target="_blank" rel="noopener" title="Baixar Frases de Motivação na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#f12711,#f5af19)">🔥</div>
+            <h3>Frases de Motivação</h3>
+            <p>Frases motivacionais e de foco para inspirar e vencer o dia.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.indiretas.indiretas" target="_blank" rel="noopener" title="Baixar Frases Indiretas na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#c026d3,#6a00f4)">🎯</div>
+            <h3>Frases Indiretas</h3>
+            <p>Indiretas e status afiados para mandar aquele recado.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.aniversario.aniversario" target="_blank" rel="noopener" title="Baixar Mensagens de Feliz Aniversário na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#ff6cab,#7366ff)">🎂</div>
+            <h3>Mensagens de Feliz Aniversário</h3>
+            <p>Mensagens de aniversário para parabenizar quem você ama.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.frasesdeamor.amor" target="_blank" rel="noopener" title="Baixar Frases de Amor e Romance na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#f857a6,#ff5858)">❤️</div>
+            <h3>Frases de Amor e Romance</h3>
+            <p>Frases de amor, romance e declarações para o seu par.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.frasesderap.rap" target="_blank" rel="noopener" title="Baixar Frases de Rap e Trap na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#232526,#414345)">🎤</div>
+            <h3>Frases de Rap e Trap</h3>
+            <p>Frases de rap, trap e atitude para status e legenda.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.frasesengracadas.humor" target="_blank" rel="noopener" title="Baixar Frases Engraçadas e Piadas na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#f7971e,#ffd200)">😂</div>
+            <h3>Frases Engraçadas e Piadas</h3>
+            <p>Frases engraçadas e piadas para rir e compartilhar.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.frasestristes.tristes" target="_blank" rel="noopener" title="Baixar Frases Tristes e Desabafos na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#536976,#292e49)">💧</div>
+            <h3>Frases Tristes e Desabafos</h3>
+            <p>Frases tristes, desabafos e saudade para expressar o que sente.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
+          <a class="app-card" href="https://play.google.com/store/apps/details?id=com.oracoesesalmos.oracoes" target="_blank" rel="noopener" title="Baixar Orações Poderosas e Salmos na Google Play">
+            <div class="app-icon" style="background:linear-gradient(135deg,#f6d365,#c9a227)">🙏</div>
+            <h3>Orações Poderosas e Salmos</h3>
+            <p>Orações e salmos para todo dia: fé, proteção, cura e gratidão.</p>
+            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+
         </div>
       </div>
     </section>
