@@ -266,6 +266,21 @@ const apps = [
   {n:"Calendário Feriados 2026 2027",c:"Ferramentas",pkg:"com.calendarioferiados.calendario",i:"JdN8x4JMDiTAu8V_cJJ0wzcA7h4MJq4zt2bMAiygIdJfTSqlKjbfTqUBkHhsNLN0vDkwkkQadJBuGKLje85yVw",d:"Feriados nacionais 2026 e 2027 e datas comemorativas."}
 ];
 
+const SLUG = {
+  "com.frasesdiarias.frases_diarias":"frases-do-dia","com.frasesstatus.frases_status":"frases-e-status",
+  "com.frasesmotivacao.frasesmotivacao":"frases-motivacao","com.frasesdeamor.amor":"frases-de-amor",
+  "com.mensagens.mensagens":"mensagens-bom-dia","com.frasesbonitas.bonitas":"frases-bonitas",
+  "com.frasesparafotos.fotos":"frases-para-fotos","com.indiretas.indiretas":"frases-indiretas",
+  "com.frasespararefletir.refletir":"frases-para-refletir","com.frasesdavida.vida":"frases-da-vida",
+  "com.frasestristes.tristes":"frases-tristes","com.frasesengracadas.humor":"frases-engracadas",
+  "com.frasesderap.rap":"frases-de-rap","com.frasesemingles.ingles":"frases-em-ingles",
+  "com.aniversario.aniversario":"mensagens-aniversario","com.frasesdeamizade.amizade":"frases-de-amizade",
+  "com.cantadas.cantadas":"cantadas","com.nossoamor.contador":"nossoamor",
+  "com.frasesbiblicas.frases_biblicas":"frases-biblicas","com.bibliasagrada.biblia":"biblia-sagrada",
+  "com.oracoesesalmos.oracoes":"oracoes-e-salmos","com.figurinhasfrases.figurinhas":"figurinhas-de-frases",
+  "com.smarttoolbox.tools":"smarttools","com.horoscopododia.horoscopo":"horoscopo",
+  "com.calendarioferiados.calendario":"calendario"
+};
 const grid = document.getElementById('grid');
 const filters = document.getElementById('filters');
 const cats = ["Todos", ...Array.from(new Set(apps.map(a=>a.c)))];
@@ -279,7 +294,7 @@ function render(){
         <div><div class="nm">${a.n}</div><span class="cat">${a.c}</span>${a.nw?' <span class="cat" style="background:rgba(53,230,168,.16);color:#35e6a8">Novo</span>':''}</div>
       </div>
       <p class="desc">${a.d}</p>
-      <a class="get" href="${PLAY}${a.pkg}" target="_blank" rel="noopener">▶ Instalar na Play</a>
+      <a class="get" href="apps/${SLUG[a.pkg]}.html">Ver app ›</a>
     </article>`).join('');
 }
 filters.innerHTML = cats.map(c=>`<button class="chip${c==='Todos'?' active':''}" data-c="${c}">${c}</button>`).join('');
