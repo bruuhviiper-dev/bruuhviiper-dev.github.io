@@ -1,427 +1,295 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phantom Tecnologia — Desenvolvimento de Aplicativos</title>
-  <meta name="description" content="Phantom Tecnologia desenvolve aplicativos Android úteis e de entretenimento para o público de língua portuguesa, publicados na Google Play." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0b1020;
-      --bg2: #121a33;
-      --card: rgba(255,255,255,0.045);
-      --border: rgba(255,255,255,0.10);
-      --text: #eef1f8;
-      --muted: #9aa4bf;
-      --brand: #6d8bff;
-      --brand2: #a06bff;
-      --accent: #24d6a5;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    h1, h2, h3, .brand { font-family: "Sora", sans-serif; letter-spacing: -0.02em; }
-    a { color: inherit; text-decoration: none; }
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 22px; }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Beggins Apps — Frases, Status e Mensagens para WhatsApp</title>
+<meta name="description" content="Apps de frases para status, bom dia, amor, motivação, bíblia, reflexão e muito mais. 100% em português, offline e grátis. Baixe os aplicativos da Beggins Apps no Google Play." />
+<meta name="keywords" content="frases, frases para status, frases para whatsapp, frases de amor, frases de motivação, bom dia, mensagens prontas, versículo do dia, cantadas, indiretas, Beggins Apps" />
+<meta name="author" content="Beggins Apps" />
+<meta name="theme-color" content="#0C0A1A" />
+<link rel="canonical" href="https://bruuhviiper-dev.github.io/" />
+<meta name="robots" content="index, follow" />
 
-    /* HEADER */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(11,16,32,0.72);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; }
-    .logo {
-      width: 30px; height: 30px; border-radius: 9px;
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      display: grid; place-items: center; box-shadow: 0 6px 20px rgba(109,139,255,0.45);
-    }
-    .logo svg { width: 17px; height: 17px; }
-    .nav-links { display: flex; gap: 28px; }
-    .nav-links a { color: var(--muted); font-weight: 500; font-size: 0.95rem; transition: color .2s; }
-    .nav-links a:hover { color: var(--text); }
-    @media (max-width: 680px) { .nav-links { display: none; } }
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Beggins Apps" />
+<meta property="og:title" content="Beggins Apps — Frases, Status e Mensagens para WhatsApp" />
+<meta property="og:description" content="Apps de frases para status, bom dia, amor, motivação e muito mais. 100% em português, offline e grátis." />
+<meta property="og:url" content="https://bruuhviiper-dev.github.io/" />
+<meta property="og:image" content="https://play-lh.googleusercontent.com/wF4NM3j75dLuOs0J_bSb06zxlcnN4-dG51TV3K9VZGxO2OFXseMhqma-qNE7O3B8i5I=w1200-h630-pc0xff0C0A1A-pd" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Beggins Apps — Frases, Status e Mensagens" />
+<meta name="twitter:description" content="Frases para status, bom dia, amor e motivação. 100% em português, offline e grátis." />
+<meta name="twitter:image" content="https://play-lh.googleusercontent.com/wF4NM3j75dLuOs0J_bSb06zxlcnN4-dG51TV3K9VZGxO2OFXseMhqma-qNE7O3B8i5I=w1200-h630-pc0xff0C0A1A-pd" />
 
-    /* HERO */
-    .hero { position: relative; padding: 96px 0 72px; text-align: center; }
-    .hero::before {
-      content: ""; position: absolute; inset: -20% 0 auto 0; height: 620px; z-index: -1;
-      background:
-        radial-gradient(600px 320px at 70% 10%, rgba(160,107,255,0.25), transparent 70%),
-        radial-gradient(560px 300px at 25% 0%, rgba(109,139,255,0.28), transparent 70%);
-    }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 7px 15px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
-      background: var(--card); border: 1px solid var(--border); color: var(--muted);
-      margin-bottom: 26px;
-    }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
-    .hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.6rem); font-weight: 800; line-height: 1.08; }
-    .hero h1 .grad {
-      background: linear-gradient(120deg, var(--brand), var(--brand2), var(--accent));
-      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .hero p { max-width: 620px; margin: 22px auto 0; color: var(--muted); font-size: 1.12rem; }
-    .cta { display: flex; gap: 14px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 9px;
-      padding: 14px 24px; border-radius: 12px; font-weight: 600; font-size: 0.98rem;
-      border: 1px solid var(--border); transition: transform .15s, background .2s, box-shadow .2s;
-    }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--brand), var(--brand2));
-      border-color: transparent; box-shadow: 0 10px 30px rgba(109,139,255,0.4);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(160,107,255,0.5); }
-    .btn-ghost { background: var(--card); color: var(--text); }
-    .btn-ghost:hover { background: rgba(255,255,255,0.09); transform: translateY(-2px); }
+<link rel="icon" href="https://play-lh.googleusercontent.com/wF4NM3j75dLuOs0J_bSb06zxlcnN4-dG51TV3K9VZGxO2OFXseMhqma-qNE7O3B8i5I=s96" />
+<link rel="apple-touch-icon" href="https://play-lh.googleusercontent.com/wF4NM3j75dLuOs0J_bSb06zxlcnN4-dG51TV3K9VZGxO2OFXseMhqma-qNE7O3B8i5I=s180" />
 
-    /* STATS */
-    .stats { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-top: 54px; }
-    .stat { min-width: 150px; padding: 20px; border-radius: 16px; background: var(--card); border: 1px solid var(--border); }
-    .stat b { display: block; font-family: "Sora"; font-size: 1.7rem; font-weight: 800; }
-    .stat span { color: var(--muted); font-size: 0.9rem; }
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://play-lh.googleusercontent.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    /* SECTIONS */
-    section.block { padding: 74px 0; }
-    .eyebrow { color: var(--brand); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; }
-    .block h2 { text-align: center; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; margin-top: 10px; }
-    .block .sub { text-align: center; color: var(--muted); max-width: 560px; margin: 14px auto 0; }
+<!-- SEO estruturado -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Beggins Apps",
+  "url": "https://bruuhviiper-dev.github.io/",
+  "logo": "https://play-lh.googleusercontent.com/wF4NM3j75dLuOs0J_bSb06zxlcnN4-dG51TV3K9VZGxO2OFXseMhqma-qNE7O3B8i5I=s256",
+  "description": "Desenvolvedora de aplicativos de frases, mensagens e utilidades em português para Android.",
+  "email": "nojacursos@gmail.com",
+  "sameAs": ["https://play.google.com/store/apps/dev?id=8914127458301875694"]
+}
+</script>
 
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 18px; margin-top: 46px; }
-    .app-card {
-      padding: 24px; border-radius: 18px; background: var(--card); border: 1px solid var(--border);
-      transition: transform .18s, border-color .2s, background .2s;
-    }
-    .app-card:hover { transform: translateY(-4px); border-color: rgba(109,139,255,0.5); background: rgba(255,255,255,0.07); }
-    .app-icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 16px; }
-    .app-card h3 { font-size: 1.08rem; font-weight: 700; }
-    .app-card p { color: var(--muted); font-size: 0.92rem; margin-top: 6px; }
-    .app-card .play { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; color: var(--brand); font-weight: 600; font-size: 0.9rem; }
-    .app-card .play svg { width: 15px; height: 15px; }
+<style>
+:root{
+  --bg:#0C0A1A; --bg2:#141029; --card:rgba(255,255,255,.045);
+  --card-h:rgba(255,255,255,.08); --border:rgba(255,255,255,.10);
+  --text:#F1EEFA; --muted:#A79EC8; --brand:#7C5CFF; --brand2:#B06BFF; --pink:#FF6BAE;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.brand{font-family:"Sora",sans-serif;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
 
-    .feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 46px; }
-    .feat { padding: 26px; border-radius: 18px; background: var(--card); border: 1px solid var(--border); }
-    .feat .fi { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 16px;
-      background: linear-gradient(135deg, rgba(109,139,255,0.25), rgba(160,107,255,0.25)); }
-    .feat .fi svg { width: 22px; height: 22px; stroke: var(--brand); }
-    .feat h3 { font-size: 1.1rem; }
-    .feat p { color: var(--muted); font-size: 0.94rem; margin-top: 8px; }
+/* HEADER */
+header{position:sticky;top:0;z-index:50;background:rgba(12,10,26,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.15rem}
+.brand img{width:34px;height:34px;border-radius:10px;box-shadow:0 6px 20px rgba(124,92,255,.5)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:var(--muted);font-weight:500;font-size:.95rem;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{padding:9px 16px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-weight:600;font-size:.9rem;box-shadow:0 6px 18px rgba(124,92,255,.4)}
+@media(max-width:720px){.nav-links{display:none}}
 
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border); padding: 46px 0 34px; margin-top: 20px; }
-    .foot { display: flex; justify-content: space-between; align-items: center; gap: 22px; flex-wrap: wrap; }
-    .foot .brand { font-size: 1.05rem; }
-    .foot-links { display: flex; gap: 24px; flex-wrap: wrap; }
-    .foot-links a { color: var(--muted); font-size: 0.92rem; transition: color .2s; }
-    .foot-links a:hover { color: var(--text); }
-    .copy { text-align: center; color: var(--muted); font-size: 0.82rem; margin-top: 26px; }
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Aplicativos da Phantom Tecnologia na Google Play",
-    "itemListElement": [
-      {"@type":"ListItem","position":1,"item":{"@type":"MobileApplication","name":"Frases e Status Prontos","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesstatus.frases_status"}},
-      {"@type":"ListItem","position":2,"item":{"@type":"MobileApplication","name":"Frases Bíblicas e Versículos","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesbiblicas.frases_biblicas"}},
-      {"@type":"ListItem","position":3,"item":{"@type":"MobileApplication","name":"Mensagens de Bom Dia","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.mensagens.mensagens"}},
-      {"@type":"ListItem","position":4,"item":{"@type":"MobileApplication","name":"Frases de Motivação","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesmotivacao.frasesmotivacao"}},
-      {"@type":"ListItem","position":5,"item":{"@type":"MobileApplication","name":"Frases Indiretas","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.indiretas.indiretas"}},
-      {"@type":"ListItem","position":6,"item":{"@type":"MobileApplication","name":"Mensagens de Feliz Aniversário","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.aniversario.aniversario"}},
-      {"@type":"ListItem","position":7,"item":{"@type":"MobileApplication","name":"Frases de Amor e Romance","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesdeamor.amor"}},
-      {"@type":"ListItem","position":8,"item":{"@type":"MobileApplication","name":"Frases de Rap e Trap","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesderap.rap"}},
-      {"@type":"ListItem","position":9,"item":{"@type":"MobileApplication","name":"Frases Engraçadas e Piadas","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesengracadas.humor"}},
-      {"@type":"ListItem","position":10,"item":{"@type":"MobileApplication","name":"Frases Tristes e Desabafos","applicationCategory":"EntertainmentApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasestristes.tristes"}},
-      {"@type":"ListItem","position":11,"item":{"@type":"MobileApplication","name":"Orações Poderosas e Salmos","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.oracoesesalmos.oracoes"}},
-      {"@type":"ListItem","position":12,"item":{"@type":"MobileApplication","name":"Frases da Vida","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesdavida.vida"}},
-      {"@type":"ListItem","position":13,"item":{"@type":"MobileApplication","name":"Frases de Amizade","applicationCategory":"LifestyleApplication","operatingSystem":"Android","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"url":"https://play.google.com/store/apps/details?id=com.frasesdeamizade.amizade"}}
-    ]
-  }
-  </script>
+/* HERO */
+.hero{position:relative;padding:92px 0 64px;text-align:center}
+.hero::before{content:"";position:absolute;inset:-20% 0 auto 0;height:640px;z-index:-1;
+  background:radial-gradient(620px 340px at 72% 8%,rgba(176,107,255,.28),transparent 70%),
+  radial-gradient(580px 320px at 24% 0%,rgba(124,92,255,.30),transparent 70%),
+  radial-gradient(500px 280px at 50% 30%,rgba(255,107,174,.14),transparent 70%)}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:7px 15px;border-radius:999px;font-size:.82rem;font-weight:600;background:var(--card);border:1px solid var(--border);color:var(--muted);margin-bottom:24px}
+.dot{width:8px;height:8px;border-radius:50%;background:#35e6a8;box-shadow:0 0 10px #35e6a8}
+.hero h1{font-size:clamp(2.1rem,5.4vw,3.7rem);font-weight:800;line-height:1.08;margin-bottom:20px}
+.grad{background:linear-gradient(120deg,var(--brand) 0%,var(--brand2) 50%,var(--pink) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.sub{max-width:640px;margin:0 auto 32px;color:var(--muted);font-size:clamp(1rem,2.4vw,1.18rem)}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:1rem;transition:transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 10px 30px rgba(124,92,255,.45)}
+.btn-ghost{background:var(--card);border:1px solid var(--border);color:var(--text)}
+
+/* STATS */
+.stats{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:46px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 26px;min-width:140px}
+.stat b{display:block;font-family:"Sora";font-size:1.7rem;font-weight:800;background:linear-gradient(120deg,var(--brand),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:.86rem}
+
+/* SECTION */
+section{padding:64px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 40px}
+.sec-head h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;margin-bottom:12px}
+.sec-head p{color:var(--muted)}
+
+/* FILTERS */
+.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
+.chip{padding:9px 18px;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-weight:600;font-size:.9rem;cursor:pointer;transition:all .2s}
+.chip:hover{color:var(--text);border-color:var(--brand)}
+.chip.active{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color:transparent}
+
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.appcard{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;transition:transform .18s,border-color .2s,background .2s}
+.appcard:hover{transform:translateY(-4px);border-color:rgba(124,92,255,.5);background:var(--card-h)}
+.appcard .top{display:flex;gap:14px;align-items:center;margin-bottom:14px}
+.appcard img{width:60px;height:60px;border-radius:14px;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.appcard .nm{font-family:"Sora";font-weight:700;font-size:1.03rem;line-height:1.2}
+.appcard .cat{display:inline-block;margin-top:5px;font-size:.73rem;font-weight:600;color:var(--brand2);background:rgba(124,92,255,.14);padding:3px 9px;border-radius:999px}
+.appcard .desc{color:var(--muted);font-size:.9rem;flex:1;margin-bottom:16px}
+.appcard .get{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-weight:600;font-size:.92rem;transition:opacity .2s}
+.appcard .get:hover{opacity:.92}
+
+/* FEATURES */
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.fcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:26px}
+.fico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;background:linear-gradient(135deg,rgba(124,92,255,.25),rgba(176,107,255,.18));margin-bottom:14px}
+.fcard h3{font-size:1.1rem;margin-bottom:7px}
+.fcard p{color:var(--muted);font-size:.92rem}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:48px 0 34px;margin-top:30px}
+.fgrid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:30px}
+.fbrand{max-width:320px}
+.fbrand .brand{margin-bottom:12px}
+.fbrand p{color:var(--muted);font-size:.9rem}
+.flinks{display:flex;gap:56px;flex-wrap:wrap}
+.flinks h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:14px}
+.flinks a{display:block;color:var(--text);font-size:.92rem;margin-bottom:10px;opacity:.85;transition:opacity .2s}
+.flinks a:hover{opacity:1}
+.copy{text-align:center;color:var(--muted);font-size:.84rem;border-top:1px solid var(--border);padding-top:24px}
+</style>
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <span class="logo">
-          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4.5v9L12 22l-8-6.5v-9L12 2z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 7v10M8 9.5l8 5M16 9.5l-8 5" stroke="#fff" stroke-width="1.4"/></svg>
-        </span>
-        Phantom Tecnologia
-      </div>
-      <nav class="nav-links">
-        <a href="#apps">Aplicativos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="./politicas/">Privacidade</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap">
-        <span class="badge"><span class="dot"></span> Disponível na Google Play</span>
-        <h1>Aplicativos que fazem parte<br/>do <span class="grad">seu dia a dia</span></h1>
-        <p>Na Phantom Tecnologia criamos apps simples, rápidos e cheios de conteúdo — de mensagens e frases a utilitários — para o público de língua portuguesa.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/developer?id=Phantom+Tecnologia">
-            Ver na Google Play
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">
+      <img src="https://play-lh.googleusercontent.com/wF4NM3j75dLuOs0J_bSb06zxlcnN4-dG51TV3K9VZGxO2OFXseMhqma-qNE7O3B8i5I=s96" alt="Beggins Apps" />
+      Beggins Apps
+    </a>
+    <nav class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#recursos">Recursos</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="termos.html">Termos</a>
+    </nav>
+    <a class="nav-cta" href="https://play.google.com/store/apps/dev?id=8914127458301875694" target="_blank" rel="noopener">Google Play</a>
+  </div>
+</header>
 
-        <div class="stats">
-          <div class="stat"><b>+20</b><span>aplicativos publicados</span></div>
-          <div class="stat"><b>Google Play</b><span>distribuição oficial</span></div>
-          <div class="stat"><b>100% PT-BR</b><span>feito para o Brasil</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- APLICATIVOS -->
-    <section class="block" id="apps">
-      <div class="wrap">
-        <p class="eyebrow">Nossos aplicativos</p>
-        <h2>Frases e mensagens para cada momento</h2>
-        <p class="sub">Todos gratuitos, offline e em português. Toque em um app para baixar direto na Google Play.</p>
-        <div class="grid">
-
-          <a class="app-card" href="apps/smarttools.html" rel="noopener" title="Baixar Smart Tools: Caixa de Ferramentas na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#5B4BF5,#8E54E9)">⚙️</div>
-            <h3>Smart Tools: Caixa de Ferramentas</h3>
-            <p>18 ferramentas num app só: régua, bússola, nível, medidor de som, lanterna, lupa, leitor QR, Qibla e mais. Em 6 idiomas.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/nossoamor.html" rel="noopener" title="Baixar Nosso Amor: Contador de Namoro na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#FC0349,#FF5177)">💞</div>
-            <h3>Nosso Amor: Contador de Namoro</h3>
-            <p>Há quantos dias vocês estão juntos? Contador de namoro com widget na tela inicial, datas, foto do casal e mensagem do dia.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/calendario.html" rel="noopener" title="Baixar Calendário 2026 2027 Feriados na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#2563EB,#4F46E5)">📅</div>
-            <h3>Calendário 2026 2027 Feriados</h3>
-            <p>Todos os feriados nacionais de 2026 e 2027, contagem regressiva e aviso na véspera. Offline e sempre atualizado.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/horoscopo.html" rel="noopener" title="Baixar Horóscopo do Dia e Signos na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#3A1C71,#7B4DE0)">🔮</div>
-            <h3>Horóscopo do Dia e Signos</h3>
-            <p>Seu horóscopo de hoje para os 12 signos: amor, trabalho e saúde. Compatibilidade e notificação diária.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-em-ingles.html" rel="noopener" title="Baixar Frases em Inglês com Tradução na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#6C4BF4,#8E54E9)">💬</div>
-            <h3>Frases em Inglês com Tradução</h3>
-            <p>Centenas de frases em inglês com tradução em português: amor, motivação, bio e legendas. Crie imagens no editor.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/cantadas.html" rel="noopener" title="Baixar Cantadas na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#FF4B2B,#C9184A)">🔥</div>
-            <h3>Cantadas</h3>
-            <p>+900 cantadas românticas, engraçadas e para conquistar o crush. Flerte e paquera.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-para-refletir.html" rel="noopener" title="Baixar Frases para Refletir na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#0F2027,#2C7A7B)">🪷</div>
-            <h3>Frases para Refletir</h3>
-            <p>+2.500 frases de reflexão, sabedoria, estoicismo, superação e fé.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/figurinhas-de-frases.html" rel="noopener" title="Baixar Figurinhas de Frases na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#8B5CF6,#EC4899)">💬</div>
-            <h3>Figurinhas de Frases</h3>
-            <p>Figurinhas de frases e animadas para WhatsApp: amor, bom dia, indiretas e mais.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-de-amizade.html" rel="noopener" title="Baixar Frases de Amizade na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#11998e,#38ef7d)">🫂</div>
-            <h3>Frases de Amizade</h3>
-            <p>Frases de amizade verdadeira para status, com fotos reais de amigos.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-e-status.html" rel="noopener" title="Baixar Frases e Status Prontos na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#6d8bff,#a06bff)">💬</div>
-            <h3>Frases e Status Prontos</h3>
-            <p>Frases e status prontos para WhatsApp, Instagram e Facebook.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-biblicas.html" rel="noopener" title="Baixar Frases Bíblicas e Versículos na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#f6d365,#c9a227)">📖</div>
-            <h3>Frases Bíblicas e Versículos</h3>
-            <p>Versículos e frases bíblicas para refletir, orar e compartilhar.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-evangelicas.html" rel="noopener" title="Baixar Frases e Mensagens Evangélicas na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#4776E6,#8E54E9)">✝️</div>
-            <h3>Frases e Mensagens Evangélicas</h3>
-            <p>Mais de 5.000 frases e mensagens evangélicas para status, com editor grátis.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/mensagens-bom-dia.html" rel="noopener" title="Baixar Mensagens de Bom Dia na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#f6d365,#fda085)">☀️</div>
-            <h3>Mensagens de Bom Dia</h3>
-            <p>Mensagens de bom dia, boa tarde e boa noite para enviar todo dia.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-motivacao.html" rel="noopener" title="Baixar Frases de Motivação na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#f12711,#f5af19)">🔥</div>
-            <h3>Frases de Motivação</h3>
-            <p>Frases motivacionais e de foco para inspirar e vencer o dia.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-indiretas.html" rel="noopener" title="Baixar Frases Indiretas na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#c026d3,#6a00f4)">🎯</div>
-            <h3>Frases Indiretas</h3>
-            <p>Indiretas e status afiados para mandar aquele recado.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/mensagens-aniversario.html" rel="noopener" title="Baixar Mensagens de Feliz Aniversário na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#ff6cab,#7366ff)">🎂</div>
-            <h3>Mensagens de Feliz Aniversário</h3>
-            <p>Mensagens de aniversário para parabenizar quem você ama.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-de-amor.html" rel="noopener" title="Baixar Frases de Amor e Romance na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#f857a6,#ff5858)">❤️</div>
-            <h3>Frases de Amor e Romance</h3>
-            <p>Frases de amor, romance e declarações para o seu par.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-de-rap.html" rel="noopener" title="Baixar Frases de Rap e Trap na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#232526,#414345)">🎤</div>
-            <h3>Frases de Rap e Trap</h3>
-            <p>Frases de rap, trap e atitude para status e legenda.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-engracadas.html" rel="noopener" title="Baixar Frases Engraçadas e Piadas na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#f7971e,#ffd200)">😂</div>
-            <h3>Frases Engraçadas e Piadas</h3>
-            <p>Frases engraçadas e piadas para rir e compartilhar.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-tristes.html" rel="noopener" title="Baixar Frases Tristes e Desabafos na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#536976,#292e49)">💧</div>
-            <h3>Frases Tristes e Desabafos</h3>
-            <p>Frases tristes, desabafos e saudade para expressar o que sente.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/oracoes-e-salmos.html" rel="noopener" title="Baixar Orações Poderosas e Salmos na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#f6d365,#c9a227)">🙏</div>
-            <h3>Orações Poderosas e Salmos</h3>
-            <p>Orações e salmos para todo dia: fé, proteção, cura e gratidão.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-da-vida.html" rel="noopener" title="Baixar Frases da Vida na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#ff9a44,#ff5e62)">🌻</div>
-            <h3>Frases da Vida</h3>
-            <p>Frases da vida, reflexão, status e legendas para fotos. 100% offline.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/biblia-sagrada.html" rel="noopener" title="Baixar Bíblia Sagrada Offline na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#caa15e,#5a3a1c)">📖</div>
-            <h3>Bíblia Sagrada Offline</h3>
-            <p>Bíblia Almeida completa, offline e sem anúncios. Áudio, planos e busca.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-bonitas.html" rel="noopener" title="Baixar Frases Bonitas na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#ff6b9d,#ffa15b)">🌸</div>
-            <h3>Frases Bonitas</h3>
-            <p>Frases bonitas e curtas para status, com editor de imagens.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-          <a class="app-card" href="apps/frases-para-fotos.html" rel="noopener" title="Baixar Frases para Fotos na Google Play">
-            <div class="app-icon" style="background:linear-gradient(135deg,#7a3bff,#ff4e8a)">📸</div>
-            <h3>Frases para Fotos</h3>
-            <p>Legendas e frases prontas para fotos e status, com editor de imagens.</p>
-            <span class="play">Baixar na Google Play <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SOBRE / DIFERENCIAIS -->
-    <section class="block" id="sobre">
-      <div class="wrap">
-        <p class="eyebrow">Por que a Phantom</p>
-        <h2>Simplicidade que as pessoas usam todo dia</h2>
-        <div class="feat-grid">
-          <div class="feat">
-            <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke-linejoin="round"/></svg></div>
-            <h3>Rápidos e leves</h3>
-            <p>Apps otimizados que abrem na hora e funcionam bem em qualquer aparelho.</p>
-          </div>
-          <div class="feat">
-            <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <h3>Conteúdo em português</h3>
-            <p>Tudo pensado para o público brasileiro, com atualizações frequentes.</p>
-          </div>
-          <div class="feat">
-            <div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linejoin="round"/></svg></div>
-            <h3>Privacidade em primeiro lugar</h3>
-            <p>Políticas claras e transparentes para cada aplicativo publicado.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer id="contato">
+<main>
+  <section class="hero">
     <div class="wrap">
-      <div class="foot">
-        <div class="brand">
-          <span class="logo">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4.5v9L12 22l-8-6.5v-9L12 2z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 7v10M8 9.5l8 5M16 9.5l-8 5" stroke="#fff" stroke-width="1.4"/></svg>
-          </span>
-          Phantom Tecnologia
+      <span class="badge"><span class="dot"></span> 24 apps • 100% em português • offline</span>
+      <h1>Frases para o seu dia,<br><span class="grad">prontas para compartilhar</span></h1>
+      <p class="sub">A <strong>Beggins Apps</strong> cria aplicativos de frases, mensagens, status e utilidades — bonitos, rápidos, <strong>offline e grátis</strong>. Encontre a frase perfeita para cada momento. 💜</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#apps">▼ Ver todos os apps</a>
+        <a class="btn btn-ghost" href="https://play.google.com/store/apps/dev?id=8914127458301875694" target="_blank" rel="noopener">Perfil no Google Play</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>24+</b><span>apps na Google Play</span></div>
+        <div class="stat"><b>100%</b><span>em português</span></div>
+        <div class="stat"><b>Offline</b><span>funciona sem internet</span></div>
+        <div class="stat"><b>Grátis</b><span>para baixar e usar</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Nossos aplicativos</h2>
+        <p>Frases, status, mensagens, bíblia, ferramentas e muito mais — tudo em um só lugar.</p>
+      </div>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section id="recursos" style="background:linear-gradient(180deg,transparent,rgba(124,92,255,.05))">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Por que escolher a Beggins Apps</h2>
+        <p>Apps feitos para o dia a dia de quem fala português.</p>
+      </div>
+      <div class="feat">
+        <div class="fcard"><div class="fico">📴</div><h3>Funciona offline</h3><p>Use todas as frases sem internet, a qualquer hora e em qualquer lugar.</p></div>
+        <div class="fcard"><div class="fico">🖼️</div><h3>Crie imagens</h3><p>Transforme frases em imagens lindas para status, stories e fotos em 1 toque.</p></div>
+        <div class="fcard"><div class="fico">💬</div><h3>Compartilhe fácil</h3><p>Atalho direto para WhatsApp, Instagram e Facebook — texto ou imagem.</p></div>
+        <div class="fcard"><div class="fico">🆓</div><h3>Grátis de verdade</h3><p>Baixe e use sem pagar nada. Quem quiser pode remover os anúncios.</p></div>
+        <div class="fcard"><div class="fico">🔔</div><h3>Frase do dia</h3><p>Receba uma inspiração nova todos os dias, se você quiser.</p></div>
+        <div class="fcard"><div class="fico">🇧🇷</div><h3>Em português</h3><p>Conteúdo pensado para o Brasil, Portugal, Angola e Moçambique.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="brand" href="/">
+          <img src="https://play-lh.googleusercontent.com/wF4NM3j75dLuOs0J_bSb06zxlcnN4-dG51TV3K9VZGxO2OFXseMhqma-qNE7O3B8i5I=s96" alt="Beggins Apps" />
+          Beggins Apps
+        </a>
+        <p>Aplicativos de frases, mensagens e utilidades em português. Offline, rápidos e grátis.</p>
+      </div>
+      <div class="flinks">
+        <div>
+          <h4>Beggins</h4>
+          <a href="#apps">Apps</a>
+          <a href="#recursos">Recursos</a>
+          <a href="sobre.html">Sobre</a>
         </div>
-        <div class="foot-links">
-          <a href="./politicas/">Políticas de Privacidade</a>
+        <div>
+          <h4>Legal</h4>
+          <a href="termos.html">Termos de Serviço</a>
+          <a href="privacidade.html">Política de Privacidade</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
           <a href="mailto:nojacursos@gmail.com">nojacursos@gmail.com</a>
+          <a href="https://play.google.com/store/apps/dev?id=8914127458301875694" target="_blank" rel="noopener">Google Play</a>
         </div>
       </div>
-      <p class="copy">© 2026 Phantom Tecnologia. Todos os direitos reservados.</p>
     </div>
-  </footer>
+    <div class="copy">© <span id="yr"></span> Beggins Apps · Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<script>
+const ICON = "https://play-lh.googleusercontent.com/";
+const PLAY = "https://play.google.com/store/apps/details?id=";
+const apps = [
+  {n:"Frases para Status",c:"Status",pkg:"com.frasesstatus.frases_status",i:"GoUl8RxrN__3THdOCaa9sfy2Wlyjk2i4lVk20aQKq6fU_W2ljxZsbifR1HdNHttt4sJ-HElJhlP39lbFzyM6",d:"Status prontos para WhatsApp, Instagram e fotos."},
+  {n:"Frases de Motivação",c:"Frases",pkg:"com.frasesmotivacao.frasesmotivacao",i:"uHu-P2xCYQMivXqHQCMW6jWcCeHspQRFlk23jWBBWDcmGtB6F-5prngIm6P9w822v1_3Jb0h9z4t6CCIrKFLXCE",d:"Frases motivacionais, bom dia e fé para o seu dia."},
+  {n:"Frases de Amor",c:"Frases",pkg:"com.frasesdeamor.amor",i:"3Ill8esa7lVhRmc0uicAUSCZThw6YuWsFCNm2uUzKiQ1p1b2ynGuouPpOKzdL8y_wUd0WdHWyLI3J5Qbh4isVQ",d:"Declarações, cantadas e mensagens de amor."},
+  {n:"Mensagens de Bom Dia",c:"Frases",pkg:"com.mensagens.mensagens",i:"3EDugXnUFbwFMc9Y65PeqyS5cX1QmvYkndNYDcydCwOarYRNn6hLYe8Zhl0wgYLyeyAcQv_nIId0OxSKiGE42g",d:"Bom dia, boa tarde e boa noite para compartilhar."},
+  {n:"Frases Bonitas: Status e Fotos",c:"Status",pkg:"com.frasesbonitas.bonitas",i:"lc0Effo5bZoxQkk9ZHkYR7rvSreOIPjmAoz5hw9gYkwhfTAe3qHLyb6NBJqYVEamu3dH8XP-8K1PiWUFVN_2kw",d:"Frases bonitas para status e legendas de fotos."},
+  {n:"Frases e Legendas para Fotos",c:"Status",pkg:"com.frasesparafotos.fotos",i:"-3kG85Eg4o6lVCxB4QFqhZ4XcWdX535j4Tg4Yf7MlYysDdV_WWFgGaCT-5JvHzKIKUwlccEh-aNkyZA0EKDWYQ",d:"Legendas perfeitas para as suas fotos e stories."},
+  {n:"Frases de Indiretas e Status",c:"Status",pkg:"com.indiretas.indiretas",i:"tocWR5leTIk4KnyUcNfTWvqTvDZKiVge022kz1TYJT1ox9rVTBSNj1dMesPhj31e7wmPwipCMzIlMyPjyaeG",d:"Indiretas e frases de atitude para mandar o recado."},
+  {n:"Frases para Refletir",c:"Frases",pkg:"com.frasespararefletir.refletir",i:"e38CAWqpaFI1u8aVwa6AupAykxrlxchTdCpjEacyQxDAHnK83soZ4fUiqhwrCiO2poqdoPlo22-7pB3kGfSr",d:"Frases de reflexão e sabedoria para pensar."},
+  {n:"Frases da Vida e Reflexão",c:"Frases",pkg:"com.frasesdavida.vida",i:"tyngUPdfzcOQVRBHKt9LdeT_W-VMHrS0QiiZvmOM7Ba96KHwitpPxcCcEF2NNe1R-jGKwL1AtINW1_A3atTLnyw",d:"Frases sobre a vida e seus aprendizados."},
+  {n:"Frases Tristes",c:"Frases",pkg:"com.frasestristes.tristes",i:"onla5wNdQ-s_QSeL1zz6PBgNB50FztHd7BoqGJ6gYG7BxXFnPK1F8YBGtkLKSk6MO84mz6_OAB10Hn5oMTPsz5c",d:"Frases tristes e de desabafo para os dias difíceis."},
+  {n:"Frases Engraçadas",c:"Diversão",pkg:"com.frasesengracadas.humor",i:"u0GtOEIX_Gh-XcztQBAJ_ZIXUdsgnxyamdlTDPERjBdcqyVXWbMAhSClfbTABic0FDcycZMBIwpPermobWna",d:"Humor e frases engraçadas para rir e compartilhar."},
+  {n:"Frases de Rap, Trap e Rimas",c:"Frases",pkg:"com.frasesderap.rap",i:"a9PwDIsmczNZowBrVUfQVq2qOC_HpkeJ31foZCl7P2dEK4SUXePqzq7knsdl8uDM27ahGoW1v2gyEQVhe6Ad8g",d:"Versos de rap, trap e rimas para legendas."},
+  {n:"Frases em Inglês",c:"Frases",pkg:"com.frasesemingles.ingles",i:"zqhmybHQUpMTLaJ7dqjJAHCnsycPP8Dux6YF_RKCelGLnDPssJ0zM0I9_Q3QxktgkQjWWKhDjxItdm3Z4Hg4Yw",d:"Frases em inglês com tradução para status."},
+  {n:"Frases de Aniversário",c:"Frases",pkg:"com.aniversario.aniversario",i:"dZMUF1ogDxeCXxBM5sKzwcB0f68fRzw0ygFILLheQReTz24lioR6AV5X5ATIDU5Pf_z1FP4LCtMPg6uOp8lE7Q",d:"Mensagens de feliz aniversário para enviar."},
+  {n:"Frases de Amizade",c:"Frases",pkg:"com.frasesdeamizade.amizade",i:"CA4rZ6aI4Nlp3YMb6u42a3QnXd9zFGfbHwhlMY7DBu4VnIhiVQpqzO-byBLDn1CzfOaAuFoHDsCWScGgDy8XFg",d:"Frases de amizade para marcar os amigos."},
+  {n:"Cantadas para Conquistar",c:"Relacionamento",pkg:"com.cantadas.cantadas",i:"dSEfjjhWzNvi7cTIDP5ZWFqHGdrUtLOmkrdEv3URR3nm9MtMzMdstLI5_stREyGKrfYPF3mUttzHKowxTbgGA0w",d:"Cantadas e frases para puxar assunto e conquistar."},
+  {n:"Nosso Amor: Contador de Namoro",c:"Relacionamento",pkg:"com.nossoamor.contador",i:"eFHGTcywNjdXea9NUexV4egU9XTjI5tQ5Q9DqB8S-71Y1K2ZIke8ALuTpS0UnFSrlch31CyzvILreMT4xIQdvw",d:"Conte os dias de namoro com widget na tela inicial."},
+  {n:"Versículo do Dia e Bíblia",c:"Bíblico",pkg:"com.frasesbiblicas.frases_biblicas",i:"tQH-OVqu5iC50tMGhXBm9U4onXH0XcF8kHSjZcbkgl15-eOzHqx9z7QBoO3OtY4T_CC0tjmeW_g2xdDfTgwQ_A",d:"Versículo do dia e a Bíblia Sagrada para ler."},
+  {n:"Bíblia Sagrada Offline",c:"Bíblico",pkg:"com.bibliasagrada.biblia",i:"AH9jm7Evl7FMfnUBjgab-HlqHDOP-YouyJ1Ttx5uEA0yoyJy8rubiS8-mBBAdCbQmdY3vfvigkXBnV3KxJRTZQ",d:"A Bíblia completa, offline, para ler todos os dias."},
+  {n:"Orações Poderosas e Salmos",c:"Bíblico",pkg:"com.oracoesesalmos.oracoes",i:"eJmj7dcb4WjzEPYX4mbcxpto_cEHp3OzjXRbywmrcx3xl81zMpe7Xpr8kblbTtofFqLzG56iYVJl1KXo-jTQ4Zo",d:"Orações poderosas e salmos para a sua fé."},
+  {n:"Figurinhas de Frases WhatsApp",c:"Status",pkg:"com.figurinhasfrases.figurinhas",i:"IFN50VARHQo9cXQ-h9CoSyF2MALm2VQABuenHDP7x_XW9cTNHvVasBMOUepxPlaSLNm2BYM2k2yqVyzcV69S",d:"Figurinhas (stickers) de frases para o WhatsApp."},
+  {n:"Smart Tools: 33 Ferramentas",c:"Ferramentas",pkg:"com.smarttoolbox.tools",i:"csQHmOU6oL3MJsExeuPgCZzmC-DGg1g_IBL9NdA-Luaq66Tqx3jq56_xoB-a8oPOTnQzyc3IP8G7JsV8Zoxa0cA",d:"33 ferramentas úteis em um só app: régua, bússola e mais."},
+  {n:"Horóscopo do Dia",c:"Diversão",pkg:"com.horoscopododia.horoscopo",i:"8WDfA6cX-MqxAnb-lPDQCIYbrt3O89WOeikhnzOY0cf8ZTHxpl8K6Hle0rs3fGLB4ihs_f_xKXGJkt1p9ULhJw",d:"Seu horóscopo e signo do dia, todos os dias."},
+  {n:"Calendário Feriados 2026 2027",c:"Ferramentas",pkg:"com.calendarioferiados.calendario",i:"JdN8x4JMDiTAu8V_cJJ0wzcA7h4MJq4zt2bMAiygIdJfTSqlKjbfTqUBkHhsNLN0vDkwkkQadJBuGKLje85yVw",d:"Feriados nacionais 2026 e 2027 e datas comemorativas."}
+];
+
+const grid = document.getElementById('grid');
+const filters = document.getElementById('filters');
+const cats = ["Todos", ...Array.from(new Set(apps.map(a=>a.c)))];
+let active = "Todos";
+
+function render(){
+  grid.innerHTML = apps.filter(a=>active==="Todos"||a.c===active).map(a=>`
+    <article class="appcard">
+      <div class="top">
+        <img loading="lazy" src="${ICON}${a.i}=s128" alt="${a.n}" width="60" height="60" />
+        <div><div class="nm">${a.n}</div><span class="cat">${a.c}</span></div>
+      </div>
+      <p class="desc">${a.d}</p>
+      <a class="get" href="${PLAY}${a.pkg}" target="_blank" rel="noopener">▶ Instalar na Play</a>
+    </article>`).join('');
+}
+filters.innerHTML = cats.map(c=>`<button class="chip${c==='Todos'?' active':''}" data-c="${c}">${c}</button>`).join('');
+filters.addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b)return;
+  active=b.dataset.c;
+  document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));
+  render();
+});
+render();
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
