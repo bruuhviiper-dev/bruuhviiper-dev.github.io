@@ -157,7 +157,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 34px;margin-top:30px}
 <main>
   <section class="hero">
     <div class="wrap">
-      <span class="badge"><span class="dot"></span> 24 apps • 100% em português • offline</span>
+      <span class="badge"><span class="dot"></span> 25 apps • 100% em português • offline</span>
       <h1>Frases para o seu dia,<br><span class="grad">prontas para compartilhar</span></h1>
       <p class="sub">A <strong>Beggins Apps</strong> cria aplicativos de frases, mensagens, status e utilidades — bonitos, rápidos, <strong>offline e grátis</strong>. Encontre a frase perfeita para cada momento. 💜</p>
       <div class="cta-row">
@@ -165,7 +165,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 34px;margin-top:30px}
         <a class="btn btn-ghost" href="https://play.google.com/store/apps/dev?id=8914127458301875694" target="_blank" rel="noopener">Perfil no Google Play</a>
       </div>
       <div class="stats">
-        <div class="stat"><b>24+</b><span>apps na Google Play</span></div>
+        <div class="stat"><b>25+</b><span>apps na Google Play</span></div>
         <div class="stat"><b>100%</b><span>em português</span></div>
         <div class="stat"><b>Offline</b><span>funciona sem internet</span></div>
         <div class="stat"><b>Grátis</b><span>para baixar e usar</span></div>
@@ -239,6 +239,7 @@ footer{border-top:1px solid var(--border);padding:48px 0 34px;margin-top:30px}
 const ICON = "https://play-lh.googleusercontent.com/";
 const PLAY = "https://play.google.com/store/apps/details?id=";
 const apps = [
+  {n:"Frases do Dia",c:"Status",pkg:"com.frasesdiarias.frases_diarias",img:"img/frases-do-dia.png",nw:true,d:"Frases do dia para status e fotos, com editor de imagens profissional."},
   {n:"Frases para Status",c:"Status",pkg:"com.frasesstatus.frases_status",i:"GoUl8RxrN__3THdOCaa9sfy2Wlyjk2i4lVk20aQKq6fU_W2ljxZsbifR1HdNHttt4sJ-HElJhlP39lbFzyM6",d:"Status prontos para WhatsApp, Instagram e fotos."},
   {n:"Frases de Motivação",c:"Frases",pkg:"com.frasesmotivacao.frasesmotivacao",i:"uHu-P2xCYQMivXqHQCMW6jWcCeHspQRFlk23jWBBWDcmGtB6F-5prngIm6P9w822v1_3Jb0h9z4t6CCIrKFLXCE",d:"Frases motivacionais, bom dia e fé para o seu dia."},
   {n:"Frases de Amor",c:"Frases",pkg:"com.frasesdeamor.amor",i:"3Ill8esa7lVhRmc0uicAUSCZThw6YuWsFCNm2uUzKiQ1p1b2ynGuouPpOKzdL8y_wUd0WdHWyLI3J5Qbh4isVQ",d:"Declarações, cantadas e mensagens de amor."},
@@ -274,8 +275,8 @@ function render(){
   grid.innerHTML = apps.filter(a=>active==="Todos"||a.c===active).map(a=>`
     <article class="appcard">
       <div class="top">
-        <img loading="lazy" src="${ICON}${a.i}=s128" alt="${a.n}" width="60" height="60" />
-        <div><div class="nm">${a.n}</div><span class="cat">${a.c}</span></div>
+        <img loading="lazy" src="${a.img||ICON+a.i+'=s128'}" alt="${a.n}" width="60" height="60" />
+        <div><div class="nm">${a.n}</div><span class="cat">${a.c}</span>${a.nw?' <span class="cat" style="background:rgba(53,230,168,.16);color:#35e6a8">Novo</span>':''}</div>
       </div>
       <p class="desc">${a.d}</p>
       <a class="get" href="${PLAY}${a.pkg}" target="_blank" rel="noopener">▶ Instalar na Play</a>
